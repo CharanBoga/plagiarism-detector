@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plagiarism Detector</title>
+  <style>
+    body {
+      background-image: url("{{ url_for('static', filename='background.jpg') }}");
+      text-align: center; /* Aligning the content in the center */
+    }
+    .container {
+      margin: 0 auto; /* Centering the container horizontally */
+      width: 80%; /* Increasing the width of the container */
+    }
+    .text-area {
+      width: 100%;
+      height: 350px; /* Increasing the height of the text area */
+      resize: vertical; /* Allowing vertical resizing of the textarea */
+    }
+    button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 0; /* Increasing the margin for better spacing */
+      cursor: pointer;
+      background-color: blue;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      font-size: 20px; /* Increasing the font size for the textarea */
+      margin-top: 10px; /* Adding some top margin for better spacing */
+    }
+    p {
+      font-size: 24px; /* Increasing the font size for <p> tags */
+      font-style: italic;
+      color: antiquewhite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="{{url_for('static', filename='Name.png')}}" alt="Logo">
+    <form action="/report" method="POST">
+      <label for="text">Paste your text here:</label><br>
+      <textarea id="text" name="text" class="text-area" rows="10"></textarea>
+      <br>
+      <button type="submit">Generate Report</button>
+    </form> 
+    <p>You will be redirected once your report is generated.</p>
+    <p>Time to generate report depends on the length of the text.</p>
+  </div>
+</body>
+</html>
